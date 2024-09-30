@@ -25,6 +25,7 @@ def load_config():
         with open(config_path, 'w') as f:
             json.dump(config, f, indent=4)
         print(f"配置文件已创建在 {config_path}。请填写必要信息后重新运行程序。")
+        input("按下回车键以退出...")
         exit()
     
     with open(config_path, 'r') as f:
@@ -122,3 +123,4 @@ def process_deck(collection_path, deck_name, num_cards=None, num_sentences=5):
 
 if __name__ == "__main__":
     process_deck(CONFIG['COLLECTION_PATH'], CONFIG['DECK_NAME'], CONFIG['NUM_CARDS'], CONFIG['NUM_SENTENCES'])
+    input("按下回车键以退出...")
