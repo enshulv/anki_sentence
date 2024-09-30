@@ -2,7 +2,7 @@
 
 在 `config.json` 文件中设置以下参数：
 
-- COLLECTION_PATH: Anki数据库文件的路径
+- COLLECTION_PATH: Anki数据库文件的路径（默认为%APPDATA%\Anki2\你的账户名字\collection.anki2）
 - DECK_NAME: 要处理的牌组名称
 - FIELD_NAME: 包含单词的字段名称
 - NUM_CARDS: 要处理的卡片数量
