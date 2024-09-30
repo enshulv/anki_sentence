@@ -7,7 +7,7 @@ on:
     branches: [ master ]
   release:
     types: [created]
-
+workflow_dispatch:
 jobs:
   build:
     runs-on: windows-latest
@@ -38,20 +38,31 @@ jobs:
   release:
     needs: build
     runs-on: ubuntu-latest
-    if: github.event_name == 'release'
+    if: github.ref == 'refs/heads/master' && github.event_name == 'push'
     
     steps:
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.run_number }}
+        release_name: Release ${{ github.run_number }}
+        draft: false
+        prerelease: false
+
     - name: Download artifact
       uses: actions/download-artifact@v3
       with:
         name: anki_sentence_generator
-    
+
     - name: Upload to release
       uses: actions/upload-release-asset@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        upload_url: ${{ github.event.release.upload_url }}
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: ./anki_sentence_generator.exe
         asset_name: anki_sentence_generator.exe
         asset_content_type: application/octet-stream
