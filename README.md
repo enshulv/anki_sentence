@@ -7,8 +7,8 @@
 - FIELD_NAME: 包含单词的字段名称
 - NUM_CARDS: 要处理的卡片数量
 - NUM_SENTENCES: 每个单词生成的句子数量
-- API_KEY: DeepSeek API密钥
-- BASE_URL: DeepSeek API的基础URL
+- API_KEY: LLM API密钥
+- BASE_URL: LLM API的基础URL
 - TIMEOUT: API调用超时时间（秒）
 - MAX_RETRIES: 最大重试次数
 - RETRY_DELAY: 重试间隔（秒）
