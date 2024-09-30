@@ -1,3 +1,5 @@
+.gitignore
+
 # 虚拟环境
 anki_env/
 venv/
