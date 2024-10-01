@@ -40,7 +40,7 @@ def generate_sentences(word, num_sentences=5):
     for attempt in range(CONFIG['MAX_RETRIES']):
         try:
             response = client.chat.completions.create(
-                model="deepseek-chat",
+                model=CONFIG['MODEL_NAME'],
                 messages=[
                     {"role": "system", "content": CONFIG['SYSTEM_PROMPT']},
                     {"role": "user", "content": CONFIG['USER_PROMPT'].format(num_sentences=num_sentences, word=word)}
