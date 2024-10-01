@@ -1,4 +1,7 @@
 ## 配置
+利用LLM给Anki自动化造句的小工具，相比于从词典里抓句子，直接造句的方法我是觉得更灵活，更可定制化。
+
+第一次运行会生成`config.json` 
 
 在 `config.json` 文件中设置以下参数：
 
@@ -9,6 +12,7 @@
 - NUM_SENTENCES: 每个单词生成的句子数量
 - API_KEY: LLM API密钥
 - BASE_URL: LLM API的基础URL
+- MODEL_NAME: LLM模型名称
 - TIMEOUT: API调用超时时间（秒）
 - MAX_RETRIES: 最大重试次数
 - RETRY_DELAY: 重试间隔（秒）

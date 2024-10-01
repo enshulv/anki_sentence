@@ -16,6 +16,7 @@ def load_config():
             "NUM_SENTENCES": 5,
             "API_KEY": "",
             "BASE_URL": "https://api.deepseek.com/v1",
+            "MODEL_NAME": "deepseek-chat",
             "TIMEOUT": 300,
             "MAX_RETRIES": 3,
             "RETRY_DELAY": 5,
