@@ -29,7 +29,7 @@ def load_config():
         input("按下回车键以退出...")
         exit()
     
-    with open(config_path, 'r') as f:
+    with open(config_path, 'r',encoding='utf-8') as f:
         return json.load(f)
 
 CONFIG = load_config()
